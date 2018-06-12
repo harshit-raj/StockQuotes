@@ -29,7 +29,7 @@ public class StockResource {
     @GetMapping("/{username}")
     public List<Stock> getStock(@PathVariable("username") final String userName) {
 
-        ResponseEntity<List<String>> quoteResponse = restTemplate.exchange("http://localhost:8300/rest/db/" + userName, HttpMethod.GET,
+        ResponseEntity<List<String>> quoteResponse = restTemplate.exchange("http://db-service/rest/db/" + userName, HttpMethod.GET,
                 null, new ParameterizedTypeReference<List<String>>() {
                 });
 
